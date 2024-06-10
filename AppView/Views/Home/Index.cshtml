@@ -1,0 +1,54 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Calculate Compound Interest</h2>
+<form asp-action="CalculateCompoundInterest" method="post">
+    <div class="form-group">
+        <label for="money">Số tiền:</label>
+        <input type="number" class="form-control" name="money" id="money" required>
+    </div>
+    <div class="form-group">
+        <label for="n">Số Tháng:</label>
+        <input type="number" class="form-control" name="n" id="n" required>
+    </div>
+    <div class="form-group">
+        <label for="p">Tỉ lệ lãi:</label>
+        <input type="number" class="form-control" step="0.01" name="p" id="p" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+
+</form>
+
+@if (ViewBag.BMIResult != null)
+{
+    <div>
+        <h3>Tiền lãi:</h3>
+        <p>@ViewBag.BMIResult</p>
+    </div>
+}
+
+<hr>
+
+
+
+   
+
+<h2>Find Third Largest Number</h2>
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label for="arr">Array:</label>
+        <input type="text" class="form-control" id="arr" name="arr" />
+    </div>
+    <button type="submit" class="btn btn-primary">Find Third Largest</button>
+</form>
+
+@if (!string.IsNullOrEmpty(ViewBag.ThirdLargestResult))
+{
+    <div class="alert alert-info mt-3">
+        @ViewBag.ThirdLargestResult
+    </div>
+}
+
+
+
